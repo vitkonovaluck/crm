@@ -12,21 +12,22 @@ class RolesController extends Controller
         return response()->json(Role::get());
    }
 
-    public function create()
+    public function create(Request $request)
     {
-//        $role = new Role();
-//
-//        $role->name = 'Client';
-//        $role->save();
-        Role::create([
-            'name' => 'Admin',
-            ]);
+        Role::create($request->only('name'));
+
         return response()->json(true);
    }
 
     public function show(Role $role)
     {
-        
+
         return response()->json(['data' => $role]);
+    }
+
+    public function update(Request $request, Role $role)
+    {
+        $role->update($request->only('name'));
+        return response()->json($role);
     }
 }

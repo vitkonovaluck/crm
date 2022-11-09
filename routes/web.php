@@ -18,8 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [MainController::class,'index']);
 
 
-Route::get('index', [RolesController::class,'index']);
-Route::get('create', [RolesController::class,'create']);
-
+Route::get('roles', [RolesController::class,'index']);
+Route::post('roles', [RolesController::class, 'create']);
+Route::put('roles/{role}', [RolesController::class, 'update']);
 Route::get('roles/{roleId}', [RolesController::class,'show']);
 
