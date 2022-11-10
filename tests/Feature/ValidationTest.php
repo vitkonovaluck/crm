@@ -13,10 +13,19 @@ class ValidationTest extends TestCase
      *
      * @return void
      */
-    public function test_example()
+    public function testValidationWrongEmail()
     {
-        $response = $this->get('/');
+        $response = $this->post('login', ['email' => 'testemail', 'password' => 'testemail']);
+        $response->assertStatus(422);
+        $content = $response->getContent();
+        $this->assertStringContainsString('email', $content);
+    }
 
-        $response->assertStatus(200);
+    public function testValidationNoPassword()
+    {
+        $response = $this->post('login', ['email' => 'testemail@example.com']);
+        $response->assertStatus(422);
+        $content = $response->getContent();
+        $this->assertStringContainsString('password', $content);
     }
 }

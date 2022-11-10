@@ -9,8 +9,9 @@ class RolesController extends Controller
 {
     public function index()
     {
-        return response()->json(Role::get());
-   }
+       // return response()->json(Role::get());
+        return Role::get();
+    }
 
     public function create(Request $request)
     {
@@ -29,5 +30,11 @@ class RolesController extends Controller
     {
         $role->update($request->only('name'));
         return response()->json($role);
+    }
+
+    public function users(Role $role)
+    {
+        return $role->users->map->name;
+//        return $role->users()->orderByDesc('id')->get();
     }
 }
