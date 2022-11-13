@@ -8,6 +8,7 @@ use Tests\TestCase;
 
 class ValidationTest extends TestCase
 {
+    use WithFaker;
     /**
      * A basic feature test example.
      *

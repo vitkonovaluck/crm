@@ -3,19 +3,13 @@
 namespace Tests\Unit;
 
 use App\Models\Ticket;
+use Illuminate\Foundation\Testing\WithFaker;
 use PHPUnit\Framework\TestCase;
 
 class TicketTest extends TestCase
 {
-    /**
-     * A basic unit test example.
-     *
-     * @return void
-     */
-    public function test_example()
-    {
-        $this->assertTrue(true);
-    }
+
+    use WithFaker;
 
     public function getTestData()
     {
