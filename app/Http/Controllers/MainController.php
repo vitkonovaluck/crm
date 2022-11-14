@@ -11,6 +11,11 @@ class MainController extends Controller
         return view('welcome');
     }
 
+    public function home()
+    {
+        return view('welcome');
+    }
+
     public function test_post(){
         return response()->json(['first-test' => 'ok']);
     }

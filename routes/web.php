@@ -22,6 +22,7 @@ Route::post('login', [AuthController::class, 'login']);
 Route::get('logout', [AuthController::class, 'logout']);
 
 Route::middleware(['auth'])->group(function () {
+    Route::get('home', [MainController::class,'home']);
     Route::middleware(['roles:admin'])->group(function () {
         Route::get('roles', [RolesController::class, 'index']);
         Route::post('roles', [RolesController::class, 'create']);

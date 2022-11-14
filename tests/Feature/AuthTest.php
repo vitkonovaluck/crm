@@ -3,8 +3,8 @@
 namespace Tests\Feature;
 
 use App\Models\User;
+use Illuminate\FoundaOtion\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
@@ -61,7 +61,7 @@ class AuthTest extends TestCase
         $response = $this->attemptToLogin($this->password . '7');
         $response->assertStatus(301);
 
-        $response = $this->post('homephp artisan make:teast  CheckRolesTest');
+        $response = $this->get('home');
         $response->assertStatus(301);
     }
 }

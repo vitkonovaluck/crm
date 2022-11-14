@@ -11,7 +11,7 @@ use Illuminate\Support\Str;
 class TicketFactory extends Factory
 {
 
-    use WithFaker;
+
     /**
      * The name of the factory's corresponding model.
      *

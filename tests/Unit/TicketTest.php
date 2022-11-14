@@ -3,8 +3,8 @@
 namespace Tests\Unit;
 
 use App\Models\Ticket;
+use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
-use PHPUnit\Framework\TestCase;
 
 class TicketTest extends TestCase
 {
