@@ -5,11 +5,8 @@
 </head>
 <body>
 <div id="app">
-    <test-component></test-component>
+    <home></home>
 </div>
 </body>
 
 </html>
-<script>
-
-</script>
