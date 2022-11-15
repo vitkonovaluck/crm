@@ -1,20 +1,16 @@
-import './bootstrap';
 
-import {createApp} from "vue/dist/vue.esm-bundler";
-import {createVueRouter} from 'vue-router/dist/vue-router.esm-bundler';
-import routes from './routes';
+//require('./bootstrap');
 
-Vue.use(VueRouter);
+import { createApp } from 'vue/dist/vue.esm-bundler';
 
 import Home from "./components/Home.vue";
 
-let router = createVueRouter({ routes, mode: 'history' });
+// import router from './routes';
 
-const app = createApp({
-    components:{
-        Home
-    },
-    router,
-});
+const app = createApp(Home);
+
+// app.use(Home);
+// app.use(router);
+//
 
 app.mount('#app');
